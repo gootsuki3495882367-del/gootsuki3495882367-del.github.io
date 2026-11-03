@@ -27,11 +27,9 @@ toggle.addEventListener("click", () => {
 });
 links.addEventListener("click", () => links.classList.remove("open"));
 
-// ---------- skill bars grow once the page has loaded ----------
-window.addEventListener("load", () => {
-  document.querySelectorAll(".skill").forEach((s) => {
-    s.querySelector("i").style.width = s.dataset.level + "%";
-  });
+// ---------- skill bars: width taken from data-level ----------
+document.querySelectorAll(".skill").forEach((s) => {
+  s.querySelector("i").style.width = s.dataset.level + "%";
 });
 
 // ---------- project filter ----------

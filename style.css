@@ -97,7 +97,7 @@ main { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
 .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
 .skill span { font-size: .95rem; }
 .bar { height: 8px; background: var(--accent-soft); border-radius: 999px; overflow: hidden; margin-top: 6px; }
-.bar i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 999px; transition: width 1s ease; }
+.bar i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 999px; }
 
 /* ---------- projects ---------- */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
