@@ -106,8 +106,9 @@ main { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
   border-radius: 999px; padding: 6px 14px; cursor: pointer; font: inherit; font-size: .9rem;
 }
 .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 16px; }
 .card {
+  min-width: 0;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 20px; box-shadow: var(--shadow); transition: transform .2s ease;
 }
@@ -122,9 +123,9 @@ main { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 20px; box-shadow: var(--shadow);
 }
-.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; margin-bottom: 18px; }
-.kv div { border-left: 3px solid var(--accent); padding-left: 10px; }
-.kv b { display: block; font-size: 1.15rem; font-family: var(--mono); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(190px, 100%), 1fr)); gap: 12px; margin-bottom: 18px; }
+.kv div { border-left: 3px solid var(--accent); padding-left: 10px; min-width: 0; }
+.kv b { display: block; font-size: 1.15rem; font-family: var(--mono); overflow-wrap: anywhere; }
 .kv span { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
 .timeline { display: grid; gap: 6px; margin-bottom: 16px; }
 .row { display: grid; grid-template-columns: 150px 1fr 80px; gap: 10px; align-items: center; font-size: .9rem; }
