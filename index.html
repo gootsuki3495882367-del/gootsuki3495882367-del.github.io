@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSI205TC Student Portfolio</title>
+  <meta name="description" content="Personal page of a Year-3 student taking CSI205TC Networking and Distributed Computing at XJTLU.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="#top">&lt;csi205 /&gt;</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Coursework</a></li>
+        <li><a href="#network">Network inspector</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Switch colour theme">&#9680;</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Year-3 student · XJTLU Entrepreneur College (Taicang)</p>
+      <h1>Learning how data moves<br>across <span class="accent">networks</span> and <span class="accent">clusters</span>.</h1>
+      <p class="lead">This page is my coursework site for <strong>CSI205TC Networking and Distributed Computing</strong>.
+        It is a static website served by GitHub Pages over HTTPS, and it also measures how it was delivered to you.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">See my coursework</a>
+        <a class="btn" href="#network">Inspect this connection</a>
+      </div>
+      <pre class="terminal" aria-label="Example terminal session"><span class="prompt">$</span> nslookup <span id="host-name">this-site.github.io</span>
+<span class="dim">Name:    this-site.github.io</span>
+<span class="dim">Address: 185.199.108.153</span>
+<span class="prompt">$</span> curl -I https://<span id="host-name-2">this-site.github.io</span>
+<span class="ok">HTTP/2 200</span>
+<span class="dim">server: GitHub.com</span></pre>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About me</h2>
+      <div class="grid two">
+        <p>I am a third-year undergraduate interested in computer networks, big-data systems and
+          machine learning. In this module I installed Ubuntu in a virtual machine, captured packets with
+          Wireshark, wrote TCP/UDP socket programs in Python and ran Hadoop and Spark jobs.</p>
+        <ul class="facts">
+          <li><span>Module</span>CSI205TC Networking and Distributed Computing</li>
+          <li><span>School</span>Academy of AI and Advanced Technology</li>
+          <li><span>Tools</span>Ubuntu 24.04, Python 3.12, Wireshark, Hadoop 3.5, Spark 3.5</li>
+          <li><span>Interests</span>Video streaming, distributed computing, data analysis</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill" data-level="85"><span>Python</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="75"><span>Socket programming (TCP / UDP)</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="70"><span>Wireshark &amp; network tools</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="65"><span>Hadoop MapReduce</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="70"><span>Apache Spark &amp; MLlib</span><div class="bar"><i></i></div></div>
+        <div class="skill" data-level="60"><span>HTML / CSS / JavaScript</span><div class="bar"><i></i></div></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>CSI205TC coursework</h2>
+      <p class="muted">Filter by topic:</p>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="network">Networking</button>
+        <button class="chip" data-filter="distributed">Distributed computing</button>
+        <button class="chip" data-filter="ml">Machine learning</button>
+      </div>
+      <div class="cards">
+        <article class="card" data-tags="network">
+          <span class="tag">Q1 · Transport layer</span>
+          <h3>Video streaming over TCP and UDP</h3>
+          <p>Python socket server and player that stream a 30 fps video in both protocols, tested
+            with emulated delay and packet loss and analysed in Wireshark.</p>
+        </article>
+        <article class="card" data-tags="network">
+          <span class="tag">Q2 · Application layer</span>
+          <h3>This website + network analysis</h3>
+          <p>Deployed with GitHub Pages. Studied with nslookup, ping, tracert and a packet capture of
+            DNS, the TCP handshake and TLS.</p>
+        </article>
+        <article class="card" data-tags="distributed">
+          <span class="tag">Q3 · MapReduce model</span>
+          <h3>MapReduce in pure Python</h3>
+          <p>Map, combine, partition, shuffle &amp; sort and reduce implemented with the standard
+            library and parallel worker processes.</p>
+        </article>
+        <article class="card" data-tags="distributed">
+          <span class="tag">Q4 · Big-data frameworks</span>
+          <h3>Word count: Hadoop vs Spark</h3>
+          <p>The same word count in Hadoop Streaming and PySpark on 3 MB to 190 MB of text, comparing
+            code, execution and running time.</p>
+        </article>
+        <article class="card" data-tags="ml distributed">
+          <span class="tag">Q5 · Spark MLlib</span>
+          <h3>Income prediction with MLlib</h3>
+          <p>A full ML pipeline on the UCI Adult data: cleaning, encoding, logistic regression and
+            tree models, evaluated with AUC and F1.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="network" class="section">
+      <h2>Network inspector</h2>
+      <p class="muted">Your browser recorded how this page reached you (Navigation Timing API).
+        These are the same phases you see in the developer tools <em>Network → Timing</em> tab.</p>
+      <div class="inspector">
+        <div class="kv" id="conn-info"></div>
+        <div class="timeline" id="timeline" aria-label="Page load timeline"></div>
+        <button class="btn small" id="rerun">Measure again (fetch this page)</button>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Code for this site is public on <a id="repo-link" href="https://github.com/">GitHub</a>.
+        Questions about the module go to the LMO forum.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Hosted on GitHub Pages · Built for CSI205TC coursework · <span id="year"></span></p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
