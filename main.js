@@ -27,16 +27,12 @@ toggle.addEventListener("click", () => {
 });
 links.addEventListener("click", () => links.classList.remove("open"));
 
-// ---------- skill bars grow when they become visible ----------
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.querySelector("i").style.width = entry.target.dataset.level + "%";
-      observer.unobserve(entry.target);
-    }
+// ---------- skill bars grow once the page has loaded ----------
+window.addEventListener("load", () => {
+  document.querySelectorAll(".skill").forEach((s) => {
+    s.querySelector("i").style.width = s.dataset.level + "%";
   });
-}, { threshold: 0.3 });
-document.querySelectorAll(".skill").forEach((s) => observer.observe(s));
+});
 
 // ---------- project filter ----------
 document.querySelectorAll(".chip").forEach((chip) => {
@@ -53,8 +49,9 @@ document.querySelectorAll(".chip").forEach((chip) => {
 
 // ---------- host name, repository link, year ----------
 const host = location.hostname || "this-site.github.io";
-document.getElementById("host-name").textContent = host;
-document.getElementById("host-name-2").textContent = host;
+["host-name", "host-name-2", "host-name-3"].forEach((id) => {
+  document.getElementById(id).textContent = host;
+});
 document.getElementById("year").textContent = new Date().getFullYear();
 if (host.endsWith(".github.io")) {
   const user = host.replace(".github.io", "");
